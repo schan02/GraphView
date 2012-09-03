@@ -181,7 +181,7 @@ abstract public class GraphView extends LinearLayout {
 	 * graph series style: color and thickness
 	 */
 	static public class GraphViewStyle {
-		public int color = 0xff0077cc;
+		public int color = 0xff636CF0;
 		public int thickness = 3;
 		public GraphViewStyle() {
 			super();
@@ -264,7 +264,7 @@ abstract public class GraphView extends LinearLayout {
 			for (int i = 0; i < verlabels.length; i++) {
 				float y = ((graphheight / vers) * i) + border;
 				paint.setColor(Color.WHITE);
-				canvas.drawText(verlabels[i], 0, y, paint);
+				canvas.drawText(verlabels[i], 15, y, paint);
 			}
 		}
 	}
@@ -599,7 +599,6 @@ abstract public class GraphView extends LinearLayout {
 		if (scalable == true && scaleDetector == null) {
 			scrollable = true; // automatically forces this
 			scaleDetector = new ScaleGestureDetector(getContext(), new ScaleGestureDetector.SimpleOnScaleGestureListener() {
-				@Override
 				public boolean onScale(ScaleGestureDetector detector) {
 					double center = viewportStart + viewportSize / 2;
 					viewportSize /= detector.getScaleFactor();
